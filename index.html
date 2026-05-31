@@ -1247,7 +1247,7 @@
         const messageText = document.getElementById('formMessage').value || '';
 
         try {
-          const response = await fetch('/api/leads', {
+          const response = await fetch('https://elite-imobiliaria.onrender.com/api/leads', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -1624,7 +1624,7 @@
         else if (current === 'Finalizado') next = 'Novo';
 
         try {
-          const response = await fetch(`/api/leads/${id}/status`, {
+          const response = await fetch(`https://elite-imobiliaria.onrender.com/api/leads/${id}/status`, {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json',
@@ -1655,7 +1655,7 @@
         
         const password = sessionStorage.getItem('broker_password') || '';
         try {
-          const response = await fetch(`/api/leads/${id}`, {
+          const response = await fetch(`https://elite-imobiliaria.onrender.com/api/leads/${id}`, {
             method: 'DELETE',
             headers: {
               'Authorization': password
