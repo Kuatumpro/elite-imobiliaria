@@ -3,21 +3,40 @@ import { useEffect, useState } from "react";
 export default function App() {
   const API = "https://elite-imobiliaria.onrender.com";
 
+  // LEADS (já existe no seu sistema)
+  const [leads, setLeads] = useState<any[]>([]);
+
+  // IMÓVEIS (NOVO)
   const [imoveis, setImoveis] = useState<any[]>([]);
-  const [form, setForm] = useState({
+  const [formImovel, setFormImovel] = useState({
     nome: "",
     preco: "",
     descricao: "",
     imagem: ""
   });
 
+  // LOGIN SIMPLES (se você já tiver, mantém)
+  const [isLogged, setIsLogged] = useState(true);
+
+  // ---------------- LEADS ----------------
+  async function loadLeads() {
+    try {
+      const res = await fetch(`${API}/api/leads`);
+      const data = await res.json();
+      setLeads(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  // ---------------- IMÓVEIS ----------------
   async function loadImoveis() {
     try {
       const res = await fetch(`${API}/api/imoveis`);
       const data = await res.json();
       setImoveis(data);
     } catch (err) {
-      console.log("Erro ao carregar imóveis", err);
+      console.log(err);
     }
   }
 
@@ -25,50 +44,84 @@ export default function App() {
     await fetch(`${API}/api/imoveis`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form)
+      body: JSON.stringify(formImovel)
     });
 
-    setForm({ nome: "", preco: "", descricao: "", imagem: "" });
+    setFormImovel({
+      nome: "",
+      preco: "",
+      descricao: "",
+      imagem: ""
+    });
 
     loadImoveis();
   }
 
   useEffect(() => {
+    loadLeads();
     loadImoveis();
   }, []);
 
+  if (!isLogged) {
+    return <h2>Acesso negado</h2>;
+  }
+
   return (
-    <div style={{ padding: 20 }}>
-      <h1>🏠 Painel de Imóveis</h1>
+    <div style={{ padding: 20, fontFamily: "Arial" }}>
+      <h1>🏠 Painel do Corretor</h1>
+
+      {/* ---------------- LEADS ---------------- */}
+      <h2>📩 Leads</h2>
+      {leads.length === 0 && <p>Nenhum lead</p>}
+
+      {leads.map((l) => (
+        <div key={l.id} style={{ border: "1px solid #ccc", margin: 5, padding: 10 }}>
+          <p><strong>{l.nome}</strong></p>
+          <p>{l.email}</p>
+          <p>{l.telefone}</p>
+        </div>
+      ))}
+
+      <hr />
+
+      {/* ---------------- IMÓVEIS ---------------- */}
+      <h2>🏠 Gestão de Imóveis</h2>
 
       <div style={{ marginBottom: 20 }}>
         <input
           placeholder="Nome"
-          value={form.nome}
-          onChange={(e) => setForm({ ...form, nome: e.target.value })}
+          value={formImovel.nome}
+          onChange={(e) =>
+            setFormImovel({ ...formImovel, nome: e.target.value })
+          }
         />
         <br />
 
         <input
           placeholder="Preço"
-          value={form.preco}
-          onChange={(e) => setForm({ ...form, preco: e.target.value })}
+          value={formImovel.preco}
+          onChange={(e) =>
+            setFormImovel({ ...formImovel, preco: e.target.value })
+          }
         />
         <br />
 
         <input
-          placeholder="Imagem"
-          value={form.imagem}
-          onChange={(e) => setForm({ ...form, imagem: e.target.value })}
+          placeholder="Imagem URL"
+          value={formImovel.imagem}
+          onChange={(e) =>
+            setFormImovel({ ...formImovel, imagem: e.target.value })
+          }
         />
         <br />
 
         <textarea
           placeholder="Descrição"
-          value={form.descricao}
-          onChange={(e) => setForm({ ...form, descricao: e.target.value })}
+          value={formImovel.descricao}
+          onChange={(e) =>
+            setFormImovel({ ...formImovel, descricao: e.target.value })
+          }
         />
-
         <br />
 
         <button onClick={addImovel}>
@@ -76,18 +129,16 @@ export default function App() {
         </button>
       </div>
 
-      <hr />
-
-      <h2>Imóveis cadastrados</h2>
-
-      {imoveis.length === 0 && <p>Nenhum imóvel ainda</p>}
+      {imoveis.length === 0 && <p>Nenhum imóvel cadastrado</p>}
 
       {imoveis.map((i) => (
         <div key={i.id} style={{ border: "1px solid #ccc", padding: 10, marginTop: 10 }}>
           <h3>{i.nome}</h3>
           <p>{i.preco}</p>
           <p>{i.descricao}</p>
-          {i.imagem && <img src={i.imagem} width={200} />}
+          {i.imagem && (
+            <img src={i.imagem} width={200} />
+          )}
         </div>
       ))}
     </div>
