@@ -3,11 +3,9 @@ import { useEffect, useState } from "react";
 export default function App() {
   const API = "https://elite-imobiliaria.onrender.com";
 
-  // LEADS (já existe no seu sistema)
   const [leads, setLeads] = useState<any[]>([]);
-
-  // IMÓVEIS (NOVO)
   const [imoveis, setImoveis] = useState<any[]>([]);
+
   const [formImovel, setFormImovel] = useState({
     nome: "",
     preco: "",
@@ -15,28 +13,25 @@ export default function App() {
     imagem: ""
   });
 
-  // LOGIN SIMPLES (se você já tiver, mantém)
-  const [isLogged, setIsLogged] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  // ---------------- LEADS ----------------
   async function loadLeads() {
     try {
       const res = await fetch(`${API}/api/leads`);
       const data = await res.json();
       setLeads(data);
     } catch (err) {
-      console.log(err);
+      console.log("Erro leads", err);
     }
   }
 
-  // ---------------- IMÓVEIS ----------------
   async function loadImoveis() {
     try {
       const res = await fetch(`${API}/api/imoveis`);
       const data = await res.json();
       setImoveis(data);
     } catch (err) {
-      console.log(err);
+      console.log("Erro imóveis", err);
     }
   }
 
@@ -58,24 +53,29 @@ export default function App() {
   }
 
   useEffect(() => {
-    loadLeads();
-    loadImoveis();
+    async function init() {
+      await Promise.all([loadLeads(), loadImoveis()]);
+      setLoading(false);
+    }
+
+    init();
   }, []);
 
-  if (!isLogged) {
-    return <h2>Acesso negado</h2>;
+  if (loading) {
+    return <h2 style={{ padding: 20 }}>Carregando painel...</h2>;
   }
 
   return (
     <div style={{ padding: 20, fontFamily: "Arial" }}>
       <h1>🏠 Painel do Corretor</h1>
 
-      {/* ---------------- LEADS ---------------- */}
+      {/* LEADS */}
       <h2>📩 Leads</h2>
+
       {leads.length === 0 && <p>Nenhum lead</p>}
 
       {leads.map((l) => (
-        <div key={l.id} style={{ border: "1px solid #ccc", margin: 5, padding: 10 }}>
+        <div key={l.id} style={{ border: "1px solid #ccc", padding: 10, marginBottom: 5 }}>
           <p><strong>{l.nome}</strong></p>
           <p>{l.email}</p>
           <p>{l.telefone}</p>
@@ -84,7 +84,7 @@ export default function App() {
 
       <hr />
 
-      {/* ---------------- IMÓVEIS ---------------- */}
+      {/* IMÓVEIS */}
       <h2>🏠 Gestão de Imóveis</h2>
 
       <div style={{ marginBottom: 20 }}>
@@ -136,9 +136,7 @@ export default function App() {
           <h3>{i.nome}</h3>
           <p>{i.preco}</p>
           <p>{i.descricao}</p>
-          {i.imagem && (
-            <img src={i.imagem} width={200} />
-          )}
+          {i.imagem && <img src={i.imagem} width={200} />}
         </div>
       ))}
     </div>
