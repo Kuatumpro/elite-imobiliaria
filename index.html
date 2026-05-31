@@ -1,0 +1,1692 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imobiliária Elite | Onde seus sonhos encontram endereço</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandBlue: {
+                DEFAULT: '#003366',
+                light: '#004488',
+                dark: '#002244',
+                soft: '#F0F4F8'
+              },
+              brandOrange: {
+                DEFAULT: '#FF8C00',
+                hover: '#E07B00',
+                soft: '#FFF5E6'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300" id="mainHeader">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          
+          <!-- Logo -->
+          <a href="#inicio" class="flex items-center gap-2 group">
+            <div class="w-10 h-10 bg-brandBlue flex items-center justify-center rounded-lg shadow-md group-hover:scale-105 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xl font-extrabold tracking-tight text-brandBlue uppercase mb-0 leading-tight">Elite</span>
+              <span class="text-[10px] font-semibold tracking-widest text-brandOrange uppercase leading-none">Imobiliária</span>
+            </div>
+          </a>
+
+          <!-- Desktop Nav Menu -->
+          <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600">
+            <a href="#inicio" class="hover:text-brandBlue transition-colors relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandOrange hover:after:w-full after:transition-all">Início</a>
+            <a href="#imoveis" class="hover:text-brandBlue transition-colors relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandOrange hover:after:w-full after:transition-all">Imóveis</a>
+            <a href="#diferenciais" class="hover:text-brandBlue transition-colors relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandOrange hover:after:w-full after:transition-all">Diferenciais</a>
+            <a href="#galeria" class="hover:text-brandBlue transition-colors relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandOrange hover:after:w-full after:transition-all">Galeria</a>
+            <a href="#contato" class="hover:text-brandBlue transition-colors relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandOrange hover:after:w-full after:transition-all">Contato</a>
+          </nav>
+
+          <!-- Action CTA -->
+          <div class="hidden md:flex items-center gap-4">
+            <a href="https://wa.me/5554996352992" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full flex items-center gap-2 transition-transform hover:-translate-y-0.5 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.993L2 22l5.233-1.371a9.918 9.918 0 0 0 4.777 1.22c5.505 0 9.988-4.478 9.989-9.984.001-5.506-4.482-9.985-9.987-9.985zm5.799 14.167c-.244.686-1.42 1.258-1.95 1.314-.482.051-.97.078-2.61-.58a11.97 11.97 0 0 1-5.111-4.49c-.615-.817-1.034-1.764-1.034-2.766 0-2.029 1.543-2.616 1.83-2.73.208-.083.414-.131.62-.131.206 0 .411.004.593.04.195.039.435-.078.679.51.25.603.856 2.083.931 2.232.075.15.124.324.025.523-.099.199-.149.324-.298.497l-.46.536c-.15.174-.306.363-.122.68.183.314.811 1.341 1.737 2.164.793.705 1.459.923 1.782 1.057.244.1.388.083.535-.083.149-.166.643-.75.816-1.002.173-.252.348-.21.583-.122.235.088 1.488.702 1.745.83.257.127.428.19.49.298.062.108.062.622-.182 1.308z"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Mobile Toggle Button -->
+          <button id="mobileMenuBtn" class="p-2 -mr-2 md:hidden text-gray-700 hover:text-brandBlue focus:outline-none" aria-label="Toggle Menu">
+            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl overflow-hidden transition-all duration-300 max-h-0">
+        <div class="px-4 pt-4 pb-6 space-y-3 font-semibold text-base text-gray-700 flex flex-col">
+          <a href="#inicio" class="mobile-link py-2 px-3 rounded-lg hover:bg-brandBlue/5 hover:text-brandBlue transition-all">Início</a>
+          <a href="#imoveis" class="mobile-link py-2 px-3 rounded-lg hover:bg-brandBlue/5 hover:text-brandBlue transition-all">Imóveis</a>
+          <a href="#diferenciais" class="mobile-link py-2 px-3 rounded-lg hover:bg-brandBlue/5 hover:text-brandBlue transition-all">Diferenciais</a>
+          <a href="#galeria" class="mobile-link py-2 px-3 rounded-lg hover:bg-brandBlue/5 hover:text-brandBlue transition-all">Galeria</a>
+          <a href="#contato" class="mobile-link py-2 px-3 rounded-lg hover:bg-brandBlue/5 hover:text-brandBlue transition-all">Contato</a>
+          <div class="pt-4 border-t border-gray-100">
+            <a href="https://wa.me/5554996352992" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-transform shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.993L2 22l5.233-1.371a9.918 9.918 0 0 0 4.777 1.22c5.505 0 9.988-4.478 9.989-9.984.001-5.506-4.482-9.985-9.987-9.985zm5.799 14.167c-.244.686-1.42 1.258-1.95 1.314-.482.051-.97.078-2.61-.58a11.97 11.97 0 0 1-5.111-4.49c-.615-.817-1.034-1.764-1.034-2.766 0-2.029 1.543-2.616 1.83-2.73.208-.083.414-.131.62-.131.206 0 .411.004.593.04.195.039.435-.078.679.51.25.603.856 2.083.931 2.232.075.15.124.324.025.523-.099.199-.149.324-.298.497l-.46.536c-.15.174-.306.363-.122.68.183.314.811 1.341 1.737 2.164.793.705 1.459.923 1.782 1.057.244.1.388.083.535-.083.149-.166.643-.75.816-1.002.173-.252.348-.21.583-.122.235.088 1.488.702 1.745.83.257.127.428.19.49.298.062.108.062.622-.182 1.308z"/>
+              </svg>
+              <span>Chamar no WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero / Topo -->
+    <section id="inicio" class="relative min-h-[95vh] flex items-center pt-24 bg-brandBlue">
+      <!-- Background Image with beautiful overlay -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1920&q=80" alt="Residência de Alto Padrão" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+        <div class="absolute inset-0 bg-gradient-to-r from-brandBlue/95 via-brandBlue/80 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full text-white">
+        <div class="max-w-2xl">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider bg-brandOrange/20 text-brandOrange border border-brandOrange/30 uppercase mb-6 animate-pulse">
+            <span class="w-2 h-2 rounded-full bg-brandOrange"></span>
+            Lançamentos Exclusivos 2026
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+            Onde seus <span class="text-brandOrange">sonhos</span> encontram endereço
+          </h1>
+          <p class="text-lg text-gray-300 mb-8 leading-relaxed font-light">
+            A Imobiliária Elite é a chave para o seu próximo capítulo de sofisticação. Apresentamos uma curadoria impecável de imóveis de alto padrão, combinando excelência arquitetônica com a segurança jurídica e patrimonial que você exige.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+            <a href="#contato" class="bg-brandOrange hover:bg-brandOrange-hover text-white font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-2 transform hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-brandOrange/30 text-center">
+              Fale com um corretor
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+            <a href="#imoveis" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-8 py-4 rounded-xl flex items-center justify-center hover:-translate-y-1 transition-all duration-300 text-center text-sm">
+              Conhecer Imóveis
+            </a>
+          </div>
+
+          <!-- Highlight Key Stats in Hero -->
+          <div class="grid grid-cols-3 gap-4 mt-16 pt-8 border-t border-white/10">
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-white">R$ 2Bi+</p>
+              <p class="text-xs sm:text-sm text-gray-300">Em negócios</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-white">4.500+</p>
+              <p class="text-xs sm:text-sm text-gray-300">Chaves entregues</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-white">99.8%</p>
+              <p class="text-xs sm:text-sm text-gray-300">De satisfação</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Feature and Property Grid Section -->
+    <section id="imoveis" class="py-24 bg-brandBlue-soft">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Section -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-sm font-extrabold text-brandOrange tracking-widest uppercase block mb-3">CONHEÇA NOSSO PORTFÓLIO</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brandBlue tracking-tight">Imóveis Exclusivos em Destaque</h2>
+          <div class="w-16 h-1 bg-brandOrange mx-auto mt-4 rounded"></div>
+          <p class="text-gray-600 mt-4 text-sm sm:text-base">
+            Casas e apartamentos selecionados minuciosamente para oferecer o maior conforto, mobilidade e sofisticação para o seu estilo de vida único.
+          </p>
+        </div>
+
+        <!-- Real-time Interactive Tabs / Filters -->
+        <div class="flex items-center justify-center flex-wrap gap-2 sm:gap-3 mb-12">
+          <button onclick="filterProperties('todos')" class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-brandBlue text-white shadow-md" data-filter="todos">Todos</button>
+          <button onclick="filterProperties('condominio')" class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-brandBlue/30 hover:bg-brandBlue/5" data-filter="condominio">Condomínios</button>
+          <button onclick="filterProperties('apartamento')" class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-brandBlue/30 hover:bg-brandBlue/5" data-filter="apartamento">Apartamentos</button>
+          <button onclick="filterProperties('casa')" class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-brandBlue/30 hover:bg-brandBlue/5" data-filter="casa">Casas</button>
+          <button onclick="filterProperties('terreno')" class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-brandBlue/30 hover:bg-brandBlue/5" data-filter="terreno">Terrenos</button>
+        </div>
+
+        <!-- 4 Detailed Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="propertyGrid">
+          
+          <!-- Card 1: Casa Condomínio -->
+          <div class="property-card bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 flex flex-col h-full" data-category="condominio">
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Mansão Alphaville" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" referrerPolicy="no-referrer">
+              <span class="absolute top-4 left-4 bg-brandBlue text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">Condomínio</span>
+              <span class="absolute top-4 right-4 bg-emerald-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">Destaque</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-lg font-bold text-brandBlue mb-1 leading-snug">Mansão Alphaville Residencial</h3>
+              <p class="text-xs text-gray-500 mb-4 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-brandOrange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                </svg>
+                Barueri, São Paulo
+              </p>
+              
+              <!-- Characteristics Grid -->
+              <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-gray-100 mb-5 text-gray-600 text-xs text-center font-medium">
+                <div>
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Dormitórios</span>
+                  4 Suítes
+                </div>
+                <div class="border-l border-r border-gray-100">
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Banheiros</span>
+                  5 Banhos
+                </div>
+                <div>
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Área Útil</span>
+                  420m²
+                </div>
+              </div>
+
+              <!-- Price & CTA -->
+              <div class="mt-auto pt-2">
+                <p class="text-gray-400 text-[11px] font-medium uppercase tracking-wider">Valor de Venda</p>
+                <div class="flex items-baseline justify-between mb-4">
+                  <p class="text-xl font-extrabold text-brandBlue">R$ 3.800.000</p>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <button onclick="openDetailsModal('Mansão Alphaville Residencial', 'Mansão espetacular com projeto contemporâneo, piscina de borda infinita, ampla área gourmet integrada, pé direito duplo, automação residencial de ponta e segurança blindada armada 24h.', 'R$ 3.800.000', '4 Suítes', '5 Banhos', '420m²', 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80')" class="py-2 px-3 border border-brandBlue/20 text-brandBlue hover:bg-brandBlue/5 text-xs font-bold rounded-lg transition-colors">Detalhes</button>
+                  <button onclick="fillInterest('Mansão Alphaville Residencial')" class="py-2 px-3 bg-brandOrange hover:bg-brandOrange-hover text-white text-xs font-bold rounded-lg transition-colors shadow-sm">Interesse</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Apartamento -->
+          <div class="property-card bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 flex flex-col h-full" data-category="apartamento">
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Penthouse Elite" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" referrerPolicy="no-referrer">
+              <span class="absolute top-4 left-4 bg-brandBlue text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">Apartamento</span>
+              <span class="absolute top-4 right-4 bg-emerald-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">Vista Mar</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-lg font-bold text-brandBlue mb-1 leading-snug">Elite Residence Penthouse</h3>
+              <p class="text-xs text-gray-500 mb-4 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-brandOrange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                </svg>
+                Bela Vista, Rio de Janeiro
+              </p>
+              
+              <!-- Characteristics Grid -->
+              <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-gray-100 mb-5 text-gray-600 text-xs text-center font-medium">
+                <div>
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Dormitórios</span>
+                  3 Suítes
+                </div>
+                <div class="border-l border-r border-gray-100">
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Banheiros</span>
+                  4 Banhos
+                </div>
+                <div>
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Área Útil</span>
+                  210m²
+                </div>
+              </div>
+
+              <!-- Price & CTA -->
+              <div class="mt-auto pt-2">
+                <p class="text-gray-400 text-[11px] font-medium uppercase tracking-wider">Valor de Venda</p>
+                <div class="flex items-baseline justify-between mb-4">
+                  <p class="text-xl font-extrabold text-brandBlue">R$ 2.100.000</p>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <button onclick="openDetailsModal('Elite Residence Penthouse', 'Cobertura linear magnífica com acabamentos em mármore Carrara, adega climatizada para 120 garrafas, spa privativo com hidromassagem e vista integral de 180 graus para as mais belas paisagens do Rio de Janeiro.', 'R$ 2.100.000', '3 Suítes', '4 Banhos', '210m²', 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80')" class="py-2 px-3 border border-brandBlue/20 text-brandBlue hover:bg-brandBlue/5 text-xs font-bold rounded-lg transition-colors">Detalhes</button>
+                  <button onclick="fillInterest('Elite Residence Penthouse')" class="py-2 px-3 bg-brandOrange hover:bg-brandOrange-hover text-white text-xs font-bold rounded-lg transition-colors shadow-sm">Interesse</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Casa -->
+          <div class="property-card bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 flex flex-col h-full" data-category="casa">
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80" alt="Villa Toscana" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" referrerPolicy="no-referrer">
+              <span class="absolute top-4 left-4 bg-brandBlue text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">Casa</span>
+              <span class="absolute top-4 right-4 bg-brandBlue text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">Oportunidade</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-lg font-bold text-brandBlue mb-1 leading-snug">Villa Di Toscana Residência</h3>
+              <p class="text-xs text-gray-500 mb-4 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-brandOrange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                </svg>
+                Campinas, São Paulo
+              </p>
+              
+              <!-- Characteristics Grid -->
+              <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-gray-100 mb-5 text-gray-600 text-xs text-center font-medium">
+                <div>
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Dormitórios</span>
+                  3 Quartos
+                </div>
+                <div class="border-l border-r border-gray-100">
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Banheiros</span>
+                  3 Banhos
+                </div>
+                <div>
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Área Útil</span>
+                  180m²
+                </div>
+              </div>
+
+              <!-- Price & CTA -->
+              <div class="mt-auto pt-2">
+                <p class="text-gray-400 text-[11px] font-medium uppercase tracking-wider">Valor de Venda</p>
+                <div class="flex items-baseline justify-between mb-4">
+                  <p class="text-xl font-extrabold text-brandBlue">R$ 950.000</p>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <button onclick="openDetailsModal('Villa Di Toscana Residência', 'Uma charmosa casa inspirada na arquitetura toscana clássica, com ampla iluminação natural, lindo jardim com árvores frutíferas já formadas, garagem para 3 veículos e projeto moderno integrado, perfeita para receber a família.', 'R$ 950.000', '3 Quartos', '3 Banhos', '180m²', 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80')" class="py-2 px-3 border border-brandBlue/20 text-brandBlue hover:bg-brandBlue/5 text-xs font-bold rounded-lg transition-colors">Detalhes</button>
+                  <button onclick="fillInterest('Villa Di Toscana Residência')" class="py-2 px-3 bg-brandOrange hover:bg-brandOrange-hover text-white text-xs font-bold rounded-lg transition-colors shadow-sm">Interesse</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Terreno -->
+          <div class="property-card bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 flex flex-col h-full" data-category="terreno">
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Lote Elite Club" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" referrerPolicy="no-referrer">
+              <span class="absolute top-4 left-4 bg-brandBlue text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">Terreno</span>
+              <span class="absolute top-4 right-4 bg-emerald-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">Exclusividade</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-lg font-bold text-brandBlue mb-1 leading-snug">Lote Elite Club & Golf</h3>
+              <p class="text-xs text-gray-500 mb-4 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-brandOrange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                </svg>
+                Itupeva, São Paulo
+              </p>
+              
+              <!-- Characteristics Grid -->
+              <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-gray-100 mb-5 text-gray-600 text-xs text-center font-medium">
+                <div>
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Topologia</span>
+                  Plano
+                </div>
+                <div class="border-l border-r border-gray-100">
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Vista</span>
+                  Golf Club
+                </div>
+                <div>
+                  <span class="block text-gray-400 text-[10px] uppercase font-bold tracking-wider">Área Lote</span>
+                  600m²
+                </div>
+              </div>
+
+              <!-- Price & CTA -->
+              <div class="mt-auto pt-2">
+                <p class="text-gray-400 text-[11px] font-medium uppercase tracking-wider">Valor de Venda</p>
+                <div class="flex items-baseline justify-between mb-4">
+                  <p class="text-xl font-extrabold text-brandBlue">R$ 680.000</p>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <button onclick="openDetailsModal('Lote Elite Club & Golf', 'Loteamento totalmente plano em área nobre de alta valorização ao lado de lagos contemplativos de carpas, complexo esportivo completo e campo profissional de Golf.', 'R$ 680.000', 'Plano', 'Visual Campo de Golfe', '600m²', 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80')" class="py-2 px-3 border border-brandBlue/20 text-brandBlue hover:bg-brandBlue/5 text-xs font-bold rounded-lg transition-colors">Detalhes</button>
+                  <button onclick="fillInterest('Lote Elite Club & Golf')" class="py-2 px-3 bg-brandOrange hover:bg-brandOrange-hover text-white text-xs font-bold rounded-lg transition-colors shadow-sm">Interesse</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Diferenciais Section -->
+    <section id="diferenciais" class="py-24 bg-white fade-in-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Section -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-sm font-extrabold text-brandOrange tracking-widest uppercase block mb-3">COMO TRABALHAMOS</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brandBlue tracking-tight">Nossos Diferenciais de Confiança</h2>
+          <div class="w-16 h-1 bg-brandOrange mx-auto mt-4 rounded"></div>
+          <p class="text-gray-600 mt-4 text-sm sm:text-base">
+            Garantimos uma jornada de compra e locação de luxo fluida, pautada por total transparência do início ao fim do processo de aquisição.
+          </p>
+        </div>
+
+        <!-- 3 Columns for Diferenciais -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          
+          <!-- Diferencial 1 -->
+          <div class="bg-brandBlue-soft p-8 rounded-2xl border border-gray-100 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-brandOrange/10 rounded-full flex items-center justify-center text-brandOrange mb-6">
+              <!-- Inline Calendar/Clock SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <circle cx="12" cy="16" r="3"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-brandBlue mb-3">Entrega no Prazo</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Trabalhamos exclusivamente com as construtoras mais sólidas do mercado e garantimos rigores contratuais em todos os cronogramas estabelecidos de chaves.
+            </p>
+          </div>
+
+          <!-- Diferencial 2 -->
+          <div class="bg-brandBlue-soft p-8 rounded-2xl border border-gray-100 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-brandOrange/10 rounded-full flex items-center justify-center text-brandOrange mb-6">
+              <!-- Inline Smily/User SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-brandBlue mb-3">Cliente Satisfeito</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Nosso atendimento consultivo e pós-venda focado em satisfação garante que as expectativas estruturais e financeiras de sua família sejam plenamente atendidas.
+            </p>
+          </div>
+
+          <!-- Diferencial 3 -->
+          <div class="bg-brandBlue-soft p-8 rounded-2xl border border-gray-100 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-brandOrange/10 rounded-full flex items-center justify-center text-brandOrange mb-6">
+              <!-- Inline Shield/Check SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-brandBlue mb-3">Garantia Total</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Contamos com uma experiente assessoria jurídica imobiliária interna para validar toda documentação, certidão e contratos, garantindo 100% de segurança legal.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section id="galeria" class="py-24 bg-brandBlue-soft fade-in-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Section -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-sm font-extrabold text-brandOrange tracking-widest uppercase block mb-3">EXCELÊNCIA EM CADA DETALHE</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brandBlue tracking-tight">Galeria de Ambientes Elite</h2>
+          <div class="w-16 h-1 bg-brandOrange mx-auto mt-4 rounded"></div>
+          <p class="text-gray-600 mt-4 text-sm sm:text-base">
+            Explore a arquitetura refinada, o acabamento meticuloso e o design surpreendente presentes em cada uma de nossas propriedades exclusivas.
+          </p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Gallery Item 1 -->
+          <div class="group relative rounded-2xl overflow-hidden h-72 shadow-md cursor-pointer border border-gray-200" onclick="openLightbox('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80', 'Amplo Living Clássico / Sala de Estar')">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Sala de Estar de Luxo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer">
+            <div class="absolute inset-0 bg-gradient-to-t from-brandBlue/90 via-brandBlue/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <div>
+                <span class="bg-brandOrange text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded mb-2 inline-block">Living Room</span>
+                <h4 class="text-white font-bold text-lg">Amplo Living Integrado</h4>
+                <p class="text-xs text-gray-300">Conforto com iluminação zenital</p>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-full text-white pointer-events-none group-hover:bg-brandOrange transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Gallery Item 2 -->
+          <div class="group relative rounded-2xl overflow-hidden h-72 shadow-md cursor-pointer border border-gray-200" onclick="openLightbox('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80', 'Cozinha Gourmet de Alta Tecnologia')">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Cozinha de Alto Padrão" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer">
+            <div class="absolute inset-0 bg-gradient-to-t from-brandBlue/90 via-brandBlue/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <div>
+                <span class="bg-brandOrange text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded mb-2 inline-block">Kitchen</span>
+                <h4 class="text-white font-bold text-lg">Cozinha de Chef Integrada</h4>
+                <p class="text-xs text-gray-300">Eletrodomésticos premium e adega</p>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-full text-white pointer-events-none group-hover:bg-brandOrange transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Gallery Item 3 -->
+          <div class="group relative rounded-2xl overflow-hidden h-72 shadow-md cursor-pointer border border-gray-200" onclick="openLightbox('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80', 'Suíte Master Climatizada com Varanda')">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" alt="Suíte Master Confortável" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer">
+            <div class="absolute inset-0 bg-gradient-to-t from-brandBlue/90 via-brandBlue/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <div>
+                <span class="bg-brandOrange text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded mb-2 inline-block">Master Suite</span>
+                <h4 class="text-white font-bold text-lg">Suíte de Luxo</h4>
+                <p class="text-xs text-gray-300">Sala de banho acoplada e closet amplo</p>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-full text-white pointer-events-none group-hover:bg-brandOrange transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Gallery Item 4 -->
+          <div class="group relative rounded-2xl overflow-hidden h-72 shadow-md cursor-pointer border border-gray-200" onclick="openLightbox('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80', 'Área de Lazer Externa com Piscina de Borda Infinita')">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Área de Lazer Privativa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer">
+            <div class="absolute inset-0 bg-gradient-to-t from-brandBlue/90 via-brandBlue/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <div>
+                <span class="bg-brandOrange text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded mb-2 inline-block">Leisure Pool</span>
+                <h4 class="text-white font-bold text-lg">Área Gourmet & Deck</h4>
+                <p class="text-xs text-gray-300">Ambiente de convivência espetacular</p>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-full text-white pointer-events-none group-hover:bg-brandOrange transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Depoimentos (Client Testimonials for Elite Credibility) -->
+    <section class="py-24 bg-white fade-in-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Section -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-sm font-extrabold text-brandOrange tracking-widest uppercase block mb-3">HISTÓRIAS DE SUCESSO</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brandBlue tracking-tight">O que dizem nossos Clientes Elite</h2>
+          <div class="w-16 h-1 bg-brandOrange mx-auto mt-4 rounded"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Testimonial 1 -->
+          <div class="bg-brandBlue-soft p-8 rounded-2xl border border-gray-100 relative shadow-sm">
+            <span class="text-6xl text-brandOrange/20 absolute -top-2 left-6 pointer-events-none font-serif">“</span>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6 pt-4 relative z-10 italic">
+              "Comprar nossa mansão em Alphaville com a Imobiliária Elite foi uma experiência impecável. Eles entenderam perfeitamente nossas necessidades e a assessoria jurídica deles nos deu total tranquilidade."
+            </p>
+            <div class="flex items-center gap-4 border-t border-gray-100 pt-5">
+              <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="Carlos Eduardo" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-brandBlue">Dr. Carlos Eduardo Menezes</h4>
+                <p class="text-[11px] text-gray-400 font-medium uppercase tracking-wider">Diretor de Tecnologia</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-brandBlue-soft p-8 rounded-2xl border border-gray-100 relative shadow-sm">
+            <span class="text-6xl text-brandOrange/20 absolute -top-2 left-6 pointer-events-none font-serif">“</span>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6 pt-4 relative z-10 italic">
+              "Fiquei encantada com a cobertura no Rio de Janeiro e o profissionalismo de toda a equipe. Desde a primeira visita com o corretor até a entrega final das chaves, o padrão de atendimento foi altíssimo."
+            </p>
+            <div class="flex items-center gap-4 border-t border-gray-100 pt-5">
+              <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Beatriz Porto" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-brandBlue">Beatriz Porto</h4>
+                <p class="text-[11px] text-gray-400 font-medium uppercase tracking-wider">Investidora Imobiliária</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-brandBlue-soft p-8 rounded-2xl border border-gray-100 relative shadow-sm">
+            <span class="text-6xl text-brandOrange/20 absolute -top-2 left-6 pointer-events-none font-serif">“</span>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6 pt-4 relative z-10 italic">
+              "O atendimento da Elite é diferenciado. Eles economizaram meu tempo ao fazer uma super filtragem de lotes condizentes ao meu projeto construtivo. Recomendo fortemente para negócios premium."
+            </p>
+            <div class="flex items-center gap-4 border-t border-gray-100 pt-5">
+              <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Ricardo G." class="w-full h-full object-cover" referrerPolicy="no-referrer">
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-brandBlue">Ricardo Guimarães</h4>
+                <p class="text-[11px] text-gray-400 font-medium uppercase tracking-wider">Arquiteto e Urbanista</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lead / Contato Section -->
+    <section id="contato" class="py-24 bg-brandBlue text-white relative overflow-hidden fade-in-section">
+      
+      <!-- Ambient background patterns -->
+      <div class="absolute -top-36 -right-36 w-96 h-96 bg-brandOrange/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-36 -left-36 w-96 h-96 bg-brandOrange/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          <!-- Information Block -->
+          <div>
+            <span class="text-sm font-extrabold text-brandOrange tracking-widest uppercase block mb-3">CANAL DE RELACIONAMENTO EXCLUSIVO</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-6">Pronto para dar o primeiro passo na sua nova conquista?</h2>
+            <p class="text-gray-300 text-base mb-8 leading-relaxed font-light">
+              Deixe seus dados de contato e indique seu imóvel de interesse. Uma de nossas assessoras especialistas em alta renda entrará em contato com você em no máximo 15 minutos para agendar uma visita exclusiva e personalizada.
+            </p>
+
+            <!-- Direct Contact Info Rows -->
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="p-3.5 bg-white/10 rounded-xl text-brandOrange">
+                  <!-- Phone SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm text-gray-400 font-bold uppercase tracking-wider mb-1">Telefone Fone Reservado</h4>
+                  <p class="text-white font-semibold text-lg">+55 (54) 99635-2992</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="p-3.5 bg-white/10 rounded-xl text-brandOrange">
+                  <!-- Mail SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm text-gray-400 font-bold uppercase tracking-wider mb-1">E-mail Corporativo</h4>
+                  <p class="text-white font-semibold text-lg">miltonbarbosacorretor@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="p-3.5 bg-white/10 rounded-xl text-brandOrange">
+                  <!-- Navigation Pin SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <circle cx="12" cy="11" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm text-gray-400 font-bold uppercase tracking-wider mb-1">Sede de Negócios</h4>
+                  <p class="text-white font-semibold text-base">Rua dos Cravos, 06 - São Lucas - RS</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Form Block -->
+          <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-xl text-gray-800">
+            <h3 class="text-2xl font-extrabold text-brandBlue mb-2">Solicitar Atendimento</h3>
+            <p class="text-xs text-gray-400 mb-6 font-medium leading-relaxed">Daremos retorno ao preenchimento imediatamente.</p>
+            
+            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-gray-500 tracking-wider mb-1">Seu Nome Completo</label>
+                <input type="text" id="formName" required placeholder="Digite seu nome..." class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brandOrange focus:ring-2 focus:ring-brandOrange/25 transition-all bg-brandBlue-soft">
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase text-gray-500 tracking-wider mb-1">E-mail Principal</label>
+                  <input type="email" id="formEmail" required placeholder="seu@email.com" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brandOrange focus:ring-2 focus:ring-brandOrange/25 transition-all bg-brandBlue-soft">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase text-gray-500 tracking-wider mb-1">WhatsApp / Telefone</label>
+                  <input type="tel" id="formPhone" required placeholder="(11) 99999-9999" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brandOrange focus:ring-2 focus:ring-brandOrange/25 transition-all bg-brandBlue-soft">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase text-gray-500 tracking-wider mb-1">Imóvel de Interesse</label>
+                <select id="formInterest" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brandOrange focus:ring-2 focus:ring-brandOrange/25 transition-all bg-brandBlue-soft">
+                  <option value="Dúvida Geral">Selecione ou clique num imóvel...</option>
+                  <option value="Mansão Alphaville Residencial">Mansão Alphaville Residencial (R$ 3.800.000)</option>
+                  <option value="Elite Residence Penthouse">Elite Residence Penthouse (R$ 2.100.000)</option>
+                  <option value="Villa Di Toscana Residência">Villa Di Toscana Residência (R$ 950.000)</option>
+                  <option value="Lote Elite Club & Golf">Lote Elite Club & Golf (R$ 680.000)</option>
+                  <option value="Dúvida Geral">Outras Opções / Dúvida Geral</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase text-gray-500 tracking-wider mb-1">Mensagem (Opcional)</label>
+                <textarea id="formMessage" rows="3" placeholder="Caso queira, escreva detalhes do que procura..." class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brandOrange focus:ring-2 focus:ring-brandOrange/25 transition-all bg-brandBlue-soft"></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-brandOrange hover:bg-brandOrange-hover text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-md flex items-center justify-center gap-2 mt-2">
+                Enviar Informações de Contato
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l7-7 7 7M5 12h14" class="transform rotate-180 origin-center"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brandBlue-dark text-gray-400 py-16 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          
+          <!-- Logo & Description -->
+          <div class="md:col-span-1">
+            <a href="#inicio" class="flex items-center gap-2 mb-4 group">
+              <div class="w-8 h-8 bg-brandBlue flex items-center justify-center rounded-lg shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <p class="text-lg font-black text-white tracking-tight uppercase leading-none mb-0">Elite</p>
+            </a>
+            <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+              CRECI SP J-88392<br>
+              Excelência ética e jurídica na compra, venda e consultoria consultiva de imóveis selecionados de alto padrão em todo território nacional.
+            </p>
+          </div>
+
+          <!-- Links Rápidos -->
+          <div>
+            <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Navegação</h4>
+            <ul class="space-y-2 text-xs">
+              <li><a href="#inicio" class="hover:text-brandOrange transition-colors">Início</a></li>
+              <li><a href="#imoveis" class="hover:text-brandOrange transition-colors">Imóveis Reservados</a></li>
+              <li><a href="#diferenciais" class="hover:text-brandOrange transition-colors">Nossos Diferenciais</a></li>
+              <li><a href="#galeria" class="hover:text-brandOrange transition-colors">Galeria Arquitetônica</a></li>
+              <li><a href="#contato" class="hover:text-brandOrange transition-colors">Atendimento Exclusivo</a></li>
+            </ul>
+          </div>
+
+          <!-- Tipos de Propriedade -->
+          <div>
+            <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Filtro Reservado</h4>
+            <ul class="space-y-2 text-xs">
+              <li><button onclick="filterProperties('condominio')" class="text-left w-full hover:text-brandOrange transition-colors">Mansões de Condomínio</button></li>
+              <li><button onclick="filterProperties('apartamento')" class="text-left w-full hover:text-brandOrange transition-colors">Apartamento & Coberturas</button></li>
+              <li><button onclick="filterProperties('casa')" class="text-left w-full hover:text-brandOrange transition-colors">Casas de Alto Padrão</button></li>
+              <li><button onclick="filterProperties('terreno')" class="text-left w-full hover:text-brandOrange transition-colors">Lotes & Terrenos Nobres</button></li>
+            </ul>
+          </div>
+
+          <!-- Rede Social & Selos -->
+          <div>
+            <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Conecte-se conosco</h4>
+            <div class="flex gap-3 mb-6">
+              <!-- Instagram -->
+              <a href="#" class="w-8 h-8 rounded-full bg-white/5 hover:bg-brandOrange hover:text-white flex items-center justify-center text-gray-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-currentIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a href="#" class="w-8 h-8 rounded-full bg-white/5 hover:bg-brandOrange hover:text-white flex items-center justify-center text-gray-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a href="#" class="w-8 h-8 rounded-full bg-white/5 hover:bg-brandOrange hover:text-white flex items-center justify-center text-gray-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+            </div>
+            <div class="px-3 py-2 bg-white/5 border border-white/10 rounded-lg max-w-max">
+              <span class="block text-[9px] font-extrabold uppercase text-gray-400">Atendimento Digital Seguro</span>
+              <span class="text-xs font-semibold text-emerald-500">HTTPS / SSL Ativo</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="border-t border-white/5 pt-8 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p>© 2026 Imobiliária Elite. Todos os direitos reservados. Projeto Modelo de Portfólio.</p>
+          <div class="flex flex-wrap gap-4 items-center justify-center">
+            <a href="#" class="hover:underline">Políticas de Privacidade</a>
+            <span>•</span>
+            <a href="#" class="hover:underline font-semibold text-gray-400">Termos de Uso</a>
+            <span>•</span>
+            <button onclick="openBrokerLoginModal()" class="hover:text-brandOrange text-gray-400 font-semibold transition-colors flex items-center gap-1.5 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brandOrange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+              <span>Painel do Corretor</span>
+              <span id="brokerBadge" class="hidden bg-brandOrange text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none animate-pulse">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Item Details Modal -->
+    <div id="detailsModal" class="fixed inset-0 z-50 bg-brandBlue-dark/70 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+      <div class="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl relative translate-y-4 transition-transform duration-300" id="detailsBox">
+        <button onclick="closeDetailsModal()" class="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 transition-colors" aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <img id="modalImg" src="" alt="Property View" class="w-full h-56 object-cover" referrerPolicy="no-referrer">
+        <div class="p-8">
+          <h3 id="modalTitle" class="text-2xl font-bold text-brandBlue mb-2"></h3>
+          <p id="modalPrice" class="text-2xl font-extrabold text-brandOrange mb-4"></p>
+          
+          <div class="grid grid-cols-3 gap-2 bg-brandBlue-soft p-4 rounded-xl text-center text-xs text-gray-600 font-medium mb-6">
+            <div>
+              <span class="block text-gray-400 text-[9px] font-extrabold uppercase">Specs A</span>
+              <span id="modalSpecA"></span>
+            </div>
+            <div class="border-l border-r border-gray-200">
+              <span class="block text-gray-400 text-[9px] font-extrabold uppercase">Specs B</span>
+              <span id="modalSpecB"></span>
+            </div>
+            <div>
+              <span class="block text-gray-400 text-[9px] font-extrabold uppercase">Specs C</span>
+              <span id="modalSpecC"></span>
+            </div>
+          </div>
+
+          <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Descrição do Empreendimento</h4>
+          <p id="modalDesc" class="text-sm text-gray-600 leading-relaxed mb-6"></p>
+
+          <div class="flex gap-3">
+            <button onclick="closeDetailsModal(); fillInterest(document.getElementById('modalTitle').innerText);" class="flex-1 bg-brandOrange hover:bg-brandOrange-hover text-white py-3.5 rounded-xl font-bold transition-colors shadow-sm">Demonstrar Interesse</button>
+            <a href="https://wa.me/5554996352992" target="_blank" class="px-5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.993L2 22l5.233-1.371a9.918 9.918 0 0 0 4.777 1.22c5.505 0 9.988-4.478 9.989-9.984.001-5.506-4.482-9.985-9.987-9.985zm5.799 14.167c-.244.686-1.42 1.258-1.95 1.314-.482.051-.97.078-2.61-.58a11.97 11.97 0 0 1-5.111-4.49c-.615-.817-1.034-1.764-1.034-2.766 0-2.029 1.543-2.616 1.83-2.73.208-.083.414-.131.62-.131.206 0 .411.004.593.04.195.039.435-.078.679.51.25.603.856 2.083.931 2.232.075.15.124.324.025.523-.099.199-.149.324-.298.497l-.46.536c-.15.174-.306.363-.122.68.183.314.811 1.341 1.737 2.164.793.705 1.459.923 1.782 1.057.244.1.388.083.535-.083.149-.166.643-.75.816-1.002.173-.252.348-.21.583-.122.235.088 1.488.702 1.745.83.257.127.428.19.49.298.062.108.062.622-.182 1.308z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox Modal for Gallery Images -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-brandBlue-dark/95 flex flex-col items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+      <button onclick="closeLightbox()" class="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition-all" aria-label="Close light box">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="max-w-4xl w-full flex flex-col items-center gap-4">
+        <img id="lightboxImg" src="" alt="Amplidude" class="max-h-[80vh] max-w-full rounded-2xl object-contain shadow-2xl" referrerPolicy="no-referrer">
+        <p id="lightboxCaption" class="text-white font-semibold text-lg text-center tracking-wide"></p>
+      </div>
+    </div>
+
+    <!-- Lead Submission Toast Notification -->
+    <div id="toastSuccess" class="fixed bottom-6 right-6 z-50 bg-white border-l-4 border-emerald-500 rounded-xl shadow-xl px-4 py-4 flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 max-w-sm">
+      <div class="p-2 bg-emerald-500/10 rounded-full text-emerald-500">
+        <!-- Shield Checked -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm text-brandBlue">Solicitação Recebida!</h4>
+        <p class="text-xs text-gray-500 mt-0.5" id="toastMessage">Um corretor especialista Elite entrará em contato em 15 minutos.</p>
+      </div>
+    </div>
+
+    <!-- Broker Login Modal -->
+    <div id="brokerLoginModal" class="fixed inset-0 z-[60] bg-brandBlue-dark/70 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+      <div class="bg-white rounded-2xl max-w-sm w-full overflow-hidden shadow-2xl p-8 relative transform translate-y-4 transition-all duration-300" id="brokerLoginBox">
+        <button onclick="closeBrokerLoginModal()" class="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 transition-colors" aria-label="Fechar modal">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="text-center mb-6">
+          <div class="w-12 h-12 bg-brandBlue/10 text-brandBlue flex items-center justify-center rounded-full mx-auto mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-brandBlue">Acesso do Corretor</h3>
+          <p class="text-xs text-gray-400 mt-1">Insira a chave de segurança para ver o painel de atendimento.</p>
+        </div>
+        <form onsubmit="submitBrokerLogin(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-500 tracking-wider mb-1">Chave de Acesso</label>
+            <input type="password" id="brokerPasswordInput" placeholder="Digite a senha..." required class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brandOrange focus:ring-2 focus:ring-brandOrange/25 transition-all text-center font-bold tracking-widest bg-brandBlue-soft">
+            <span class="block text-[10px] text-gray-400 mt-1.5 text-center">Senha padrão: <code class="font-bold bg-gray-100 px-1 py-0.5 rounded text-gray-600">elite2026</code></span>
+          </div>
+          <div id="loginErrorMessage" class="text-red-500 text-xs font-semibold text-center hidden">Senha incorreta. Tente novamente.</div>
+          <button type="submit" class="w-full bg-brandBlue hover:bg-brandBlue-light text-white font-bold py-3.5 rounded-xl transition-all duration-300 cursor-pointer">
+            Acessar Painel
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Broker Dashboard Modal -->
+    <div id="brokerDashboardModal" class="fixed inset-0 z-50 bg-brandBlue-dark/90 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 lg:p-8 hidden opacity-0 transition-opacity duration-300">
+      <div class="bg-white rounded-2xl w-full max-w-6xl h-[90vh] overflow-hidden shadow-2xl flex flex-col transform scale-95 transition-all duration-300" id="brokerDashboardBox">
+        
+        <!-- Header -->
+        <div class="px-6 py-5 bg-brandBlue text-white flex flex-wrap justify-between items-center gap-4 border-b border-white/10 shrink-0">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brandOrange/20 rounded-xl flex items-center justify-center text-brandOrange">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold tracking-tight">Painel do Corretor</h2>
+              <p class="text-xs text-brandOrange font-semibold uppercase tracking-wider">Gestão e Triagem Própria de Leads</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <button onclick="fetchAndRenderLeads()" class="p-2 sm:px-4 sm:py-2 bg-white/10 hover:bg-white/20 rounded-xl text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer border border-white/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 15.89M9 11l3-3m0 0l3 3m-3-3v12" />
+              </svg>
+              <span class="hidden sm:inline">Atualizar</span>
+            </button>
+            <button onclick="logoutBroker()" class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-xl text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              <span>Sair</span>
+            </button>
+            <button onclick="closeBrokerDashboard()" class="p-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors cursor-pointer" aria-label="Fechar painel">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="flex-1 bg-gray-50 flex flex-col md:flex-row overflow-hidden">
+          
+          <!-- Left sidebar: Stats & Filter Options -->
+          <div class="w-full md:w-64 bg-white border-b md:border-b-0 md:border-r border-gray-100 p-6 flex flex-col gap-6 shrink-0 overflow-y-auto">
+            
+            <!-- Stats -->
+            <div>
+              <h3 class="text-xs font-extrabold uppercase text-gray-500 tracking-wider mb-3">Métricas Gerais</h3>
+              <div class="grid grid-cols-3 md:grid-cols-1 gap-3">
+                <div class="p-4 bg-blue-50 border border-blue-100 rounded-2xl flex flex-col">
+                  <span class="text-[10px] text-blue-600 font-bold uppercase tracking-wider">Total</span>
+                  <span id="statTotalLeads" class="text-2xl font-black text-brandBlue mt-1">0</span>
+                </div>
+                <div class="p-4 bg-orange-50 border border-orange-100 rounded-2xl flex flex-col">
+                  <span class="text-[10px] text-orange-600 font-bold uppercase tracking-wider">Novos</span>
+                  <span id="statNewLeads" class="text-2xl font-black text-brandOrange mt-1 font-mono">0</span>
+                </div>
+                <div class="p-4 bg-emerald-50 border border-emerald-100 rounded-2xl flex flex-col">
+                  <span class="text-[10px] text-emerald-600 font-bold uppercase tracking-wider">Concluídos</span>
+                  <span id="statCompletedLeads" class="text-2xl font-black text-emerald-600 mt-1">0</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Filters -->
+            <div>
+              <h3 class="text-xs font-extrabold uppercase text-gray-500 tracking-wider mb-2">Filtrar por Status</h3>
+              <div class="flex flex-col gap-1.5" id="dashboardFilters">
+                <button onclick="setDashboardStatusFilter('todos')" id="filterStatus_todos" class="w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all bg-brandBlue text-white shadow-sm cursor-pointer">Todos os Leads</button>
+                <button onclick="setDashboardStatusFilter('Novo')" id="filterStatus_Novo" class="w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-gray-600 hover:bg-gray-100 transition-all cursor-pointer">Novos Contatos</button>
+                <button onclick="setDashboardStatusFilter('Em Atendimento')" id="filterStatus_EmAtendimento" class="w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-gray-600 hover:bg-gray-100 transition-all cursor-pointer">Em Atendimento</button>
+                <button onclick="setDashboardStatusFilter('Finalizado')" id="filterStatus_Finalizado" class="w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-gray-600 hover:bg-gray-100 transition-all cursor-pointer">Atendimentos Finalizados</button>
+              </div>
+            </div>
+
+            <!-- Guidance Note -->
+            <div class="bg-gray-50 border border-gray-100 rounded-xl p-4 mt-auto hidden md:block">
+              <span class="flex items-center gap-1 text-xs font-bold text-brandBlue mb-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brandOrange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Controle do Corretor
+              </span>
+              <p class="text-[10px] text-gray-500 leading-relaxed">
+                Este painel gerencia formulários de contato em tempo real sem redirecionar os clientes. Você pode clicar nos botões para ligar, enviar e-mails ou iniciar o chat no WhatsApp diretamente.
+              </p>
+            </div>
+            
+          </div>
+          
+          <!-- Central Content: Table display -->
+          <div class="flex-1 flex flex-col overflow-hidden">
+            
+            <!-- Search Bar -->
+            <div class="p-4 bg-white border-b border-gray-100 flex items-center justify-between gap-4 shrink-0">
+              <div class="relative flex-1 max-w-md">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </span>
+                <input type="text" id="dashboardSearch" oninput="handleDashboardSearch()" placeholder="Pesquise por nome, e-mail, telefone..." class="w-full pl-9 pr-4 py-2.5 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-brandOrange bg-gray-50">
+              </div>
+              <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider" id="leadsDashboardCountText">Mostrando 0 leads</span>
+            </div>
+
+            <!-- Leads Dynamic List/Table Area -->
+            <div class="flex-1 overflow-auto p-4 sm:p-6" id="dashboardLeadsArea">
+              <!-- Rendered leads go here -->
+              <div class="flex flex-col items-center justify-center py-20 text-center text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <p class="text-sm font-semibold">Nenhum atendimento solicitado ainda.</p>
+                <p class="text-xs text-gray-400 mt-1">Todas as demonstrações de interesse aparecerão listadas aqui eletronicamente.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- JavaScript (All embedded logically for raw HTML/CSS execution) -->
+    <script>
+      // Header scroll styling effect
+      window.addEventListener('scroll', () => {
+        const header = document.getElementById('mainHeader');
+        if (window.scrollY > 50) {
+          header.classList.add('py-1', 'shadow-md', 'bg-white/98');
+          header.classList.remove('shadow-sm');
+        } else {
+          header.classList.remove('py-1', 'shadow-md', 'bg-white/98');
+          header.classList.add('shadow-sm');
+        }
+      });
+
+      // Mobile Menu Toggle controller
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        const isClosed = mobileMenu.classList.contains('hidden');
+        if (isClosed) {
+          mobileMenu.classList.remove('hidden');
+          setTimeout(() => {
+            mobileMenu.style.maxHeight = "400px";
+            mobileMenu.style.opacity = "1";
+          }, 10);
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />`;
+        } else {
+          mobileMenu.style.maxHeight = "0px";
+          mobileMenu.style.opacity = "0";
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+          }, 300);
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />`;
+        }
+      });
+
+      // Close mobile menu when clicking nav links
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.style.maxHeight = "0px";
+          mobileMenu.style.opacity = "0";
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+          }, 300);
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />`;
+        });
+      });
+
+      // Simple filter logic for property portfolio
+      function filterProperties(category) {
+        // Toggle Active Button classes
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          if (btn.getAttribute('data-filter') === category) {
+            btn.classList.add('bg-brandBlue', 'text-white', 'shadow-md');
+            btn.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+          } else {
+            btn.classList.remove('bg-brandBlue', 'text-white', 'shadow-md');
+            btn.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+          }
+        });
+
+        // Filter cards smoothly
+        const cards = document.querySelectorAll('.property-card');
+        cards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (category === 'todos' || cardCat === category) {
+            card.style.display = 'flex';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      }
+
+      // Fill form values when interest btn or detailed modal are engaged
+      function fillInterest(propertyName) {
+        const selectElement = document.getElementById('formInterest');
+        let optionFound = false;
+
+        for (let i = 0; i < selectElement.options.length; i++) {
+          if (selectElement.options[i].value === propertyName) {
+            selectElement.selectedIndex = i;
+            optionFound = true;
+            break;
+          }
+        }
+        
+        if (!optionFound) {
+          // If not matching specific property, select default doubt general
+          selectElement.selectedIndex = selectElement.options.length - 1;
+        }
+
+        // Smooth scroll to the contact element
+        const contatoSec = document.getElementById('contato');
+        contatoSec.scrollIntoView({ behavior: 'smooth' });
+
+        // Blink border of contact section to capture attention
+        const formBlock = selectElement.closest('.bg-white');
+        formBlock.classList.add('ring-4', 'ring-brandOrange/30');
+        setTimeout(() => {
+          formBlock.classList.remove('ring-4', 'ring-brandOrange/30');
+        }, 1200);
+      }
+
+      // Open Card Details Modal
+      function openDetailsModal(title, desc, price, specA, specB, specC, imgUrl) {
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalDesc').innerText = desc;
+        document.getElementById('modalPrice').innerText = price;
+        document.getElementById('modalSpecA').innerText = specA;
+        document.getElementById('modalSpecB').innerText = specB;
+        document.getElementById('modalSpecC').innerText = specC;
+        document.getElementById('modalImg').src = imgUrl;
+
+        const modal = document.getElementById('detailsModal');
+        const box = document.getElementById('detailsBox');
+        
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          box.classList.remove('translate-y-4');
+        }, 50);
+      }
+
+      // Close Card Details Modal
+      function closeDetailsModal() {
+        const modal = document.getElementById('detailsModal');
+        const box = document.getElementById('detailsBox');
+        
+        modal.classList.add('opacity-0');
+        box.classList.add('translate-y-4');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+      }
+
+      // Open Lightbox
+      function openLightbox(imgUrl, caption) {
+        document.getElementById('lightboxImg').src = imgUrl;
+        document.getElementById('lightboxCaption').innerText = caption;
+
+        const lightbox = document.getElementById('lightboxModal');
+        lightbox.classList.remove('hidden');
+        setTimeout(() => {
+          lightbox.classList.remove('opacity-0');
+        }, 50);
+      }
+
+      // Close Lightbox
+      function closeLightbox() {
+        const lightbox = document.getElementById('lightboxModal');
+        lightbox.classList.add('opacity-0');
+        setTimeout(() => {
+          lightbox.classList.add('hidden');
+        }, 300);
+      }
+
+      // Dynamic state for Broker Admin Sidebar/Dashboard filters
+      let currentLeads = [];
+      let dashboardStatusFilter = 'todos';
+      let brokerNewUnseenCount = 0;
+
+      // Contact Form Submission Handle and Send to Express API (Securely)
+      async function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        const submitBtn = event.target.querySelector('button[type="submit"]');
+        const originalBtnContent = submitBtn.innerHTML;
+        
+        // Visual sending state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <svg class="animate-spin h-5 w-5 text-white inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg> Enviando...
+        `;
+
+        const name = document.getElementById('formName').value;
+        const email = document.getElementById('formEmail').value;
+        const phone = document.getElementById('formPhone').value;
+        const interest = document.getElementById('formInterest').value;
+        const messageText = document.getElementById('formMessage').value || '';
+
+        try {
+          const response = await fetch('/api/leads', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, phone, interest, message: messageText })
+          });
+
+          if (!response.ok) {
+            throw new Error('Falha no cadastro do lead.');
+          }
+
+          // Show success Toast alert silently without opening WhatsApp page
+          const toast = document.getElementById('toastSuccess');
+          document.getElementById('toastMessage').innerText = `Seu formulário foi enviado! Logo o corretor responderá.`;
+          
+          toast.classList.remove('translate-y-24', 'opacity-0');
+          toast.classList.add('translate-y-0', 'opacity-100');
+
+          // Reset the form
+          document.getElementById('contactForm').reset();
+
+          // Highlight broker badge on footer
+          brokerNewUnseenCount++;
+          updateBrokerBadgeUI();
+
+          // Auto close toast after 6 seconds
+          setTimeout(() => {
+            toast.classList.add('translate-y-24', 'opacity-0');
+            toast.classList.remove('translate-y-0', 'opacity-100');
+          }, 6000);
+
+          // Refresh dashboard context if currently opened
+          if (isDashboardOpen()) {
+            await fetchAndRenderLeads();
+          }
+
+        } catch (error) {
+          console.error('Error submitting lead:', error);
+          alert('Houve uma instabilidade de rede ao salvar os dados. Por favor tente novamente!');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnContent;
+        }
+      }
+
+      // Broker Login Helpers
+      function openBrokerLoginModal() {
+        const modal = document.getElementById('brokerLoginModal');
+        const box = document.getElementById('brokerLoginBox');
+        
+        // Clear old errors and input
+        document.getElementById('brokerPasswordInput').value = '';
+        document.getElementById('loginErrorMessage').classList.add('hidden');
+
+        // Check if already authenticated in this session
+        const storedPass = sessionStorage.getItem('broker_password');
+        if (storedPass === 'elite2026') {
+          openBrokerDashboard();
+          return;
+        }
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          box.classList.remove('translate-y-4');
+        }, 50);
+      }
+
+      function closeBrokerLoginModal() {
+        const modal = document.getElementById('brokerLoginModal');
+        const box = document.getElementById('brokerLoginBox');
+        
+        modal.classList.add('opacity-0');
+        box.classList.add('translate-y-4');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+      }
+
+      function submitBrokerLogin(event) {
+        event.preventDefault();
+        const inputPass = document.getElementById('brokerPasswordInput').value;
+        const errorText = document.getElementById('loginErrorMessage');
+
+        if (inputPass === 'elite2026') {
+          sessionStorage.setItem('broker_password', inputPass);
+          closeBrokerLoginModal();
+          setTimeout(() => {
+            openBrokerDashboard();
+          }, 300);
+        } else {
+          errorText.classList.remove('hidden');
+        }
+      }
+
+      // Check if Admin Dashboard is open
+      function isDashboardOpen() {
+        const modal = document.getElementById('brokerDashboardModal');
+        return modal && !modal.classList.contains('hidden');
+      }
+
+      // Broker Dashboard Helpers
+      function openBrokerDashboard() {
+        // Zero out footer badge count when dashboard is open
+        brokerNewUnseenCount = 0;
+        updateBrokerBadgeUI();
+
+        const modal = document.getElementById('brokerDashboardModal');
+        const box = document.getElementById('brokerDashboardBox');
+        
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          box.classList.remove('scale-95');
+        }, 50);
+
+        // Fetch leads immediately
+        fetchAndRenderLeads();
+      }
+
+      function closeBrokerDashboard() {
+        const modal = document.getElementById('brokerDashboardModal');
+        const box = document.getElementById('brokerDashboardBox');
+        
+        modal.classList.add('opacity-0');
+        box.classList.add('scale-95');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+      }
+
+      function logoutBroker() {
+        sessionStorage.removeItem('broker_password');
+        closeBrokerDashboard();
+      }
+
+      function updateBrokerBadgeUI() {
+        const badge = document.getElementById('brokerBadge');
+        if (brokerNewUnseenCount > 0) {
+          badge.innerText = brokerNewUnseenCount;
+          badge.classList.remove('hidden');
+        } else {
+          badge.classList.add('hidden');
+        }
+      }
+
+      // Set filter state on sidebar
+      function setDashboardStatusFilter(status) {
+        dashboardStatusFilter = status;
+        
+        // Styling active action in sidebar filters
+        const buttons = document.querySelectorAll('#dashboardFilters button');
+        buttons.forEach(btn => {
+          if (btn.id === `filterStatus_${status.replace(/\s+/g, '')}`) {
+            btn.className = "w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all bg-brandBlue text-white shadow-sm cursor-pointer";
+          } else {
+            btn.className = "w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-gray-600 hover:bg-gray-100 transition-all cursor-pointer";
+          }
+        });
+
+        renderFilteredLeads();
+      }
+
+      // Search field handler
+      function handleDashboardSearch() {
+        renderFilteredLeads();
+      }
+
+      // Fetch leads list from express API
+      async function fetchAndRenderLeads() {
+        const password = sessionStorage.getItem('broker_password') || '';
+        const leadsArea = document.getElementById('dashboardLeadsArea');
+
+        leadsArea.innerHTML = `
+          <div class="flex flex-col items-center justify-center py-20 text-center text-gray-500">
+            <svg class="animate-spin h-8 w-8 text-brandOrange mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <p class="text-sm font-semibold">Carregando solicitações de clientes...</p>
+          </div>
+        `;
+
+        try {
+          const response = await fetch(`/api/leads?password=${password}`);
+          if (!response.ok) {
+            throw new Error('Falha ao carregar os leads.');
+          }
+
+          currentLeads = await response.json();
+          renderFilteredLeads();
+          updateMetricsHUD();
+
+        } catch (error) {
+          console.error('Fetch error:', error);
+          leadsArea.innerHTML = `
+            <div class="flex flex-col items-center justify-center py-20 text-center text-red-500">
+              <span class="text-3xl">⚠️</span>
+              <p class="text-sm font-bold mt-2">Falha na Conexão do Painel</p>
+              <p class="text-xs text-gray-400 mt-1">Sua chave expirou ou o servidor está reiniciando.</p>
+              <button onclick="logoutBroker()" class="mt-4 px-4 py-2 bg-brandBlue text-white text-xs font-bold rounded-xl cursor-pointer">Re-autenticar Corretor</button>
+            </div>
+          `;
+        }
+      }
+
+      // Calculate state statistics metrics UI
+      function updateMetricsHUD() {
+        document.getElementById('statTotalLeads').innerText = currentLeads.length;
+        document.getElementById('statNewLeads').innerText = currentLeads.filter(l => l.status === 'Novo').length;
+        document.getElementById('statCompletedLeads').innerText = currentLeads.filter(l => l.status === 'Finalizado').length;
+      }
+
+      // Convert server timestamp to friendly formatting
+      function formatLeadDate(dateString) {
+        if (!dateString) return 'Hoje';
+        try {
+          const d = new Date(dateString);
+          const day = String(d.getDate()).padStart(2, '0');
+          const month = String(d.getMonth() + 1).padStart(2, '0');
+          const year = d.getFullYear();
+          const hour = String(d.getHours()).padStart(2, '0');
+          const min = String(d.getMinutes()).padStart(2, '0');
+          return `${day}/${month}/${year} às ${hour}:${min}`;
+        } catch {
+          return dateString;
+        }
+      }
+
+      // Display results based on query & filters
+      function renderFilteredLeads() {
+        const query = document.getElementById('dashboardSearch').value.toLowerCase().trim();
+        const leadsArea = document.getElementById('dashboardLeadsArea');
+
+        // Apply filters
+        let filtered = currentLeads;
+        if (dashboardStatusFilter !== 'todos') {
+          filtered = filtered.filter(l => l.status === dashboardStatusFilter);
+        }
+
+        if (query) {
+          filtered = filtered.filter(l => 
+            l.name.toLowerCase().includes(query) ||
+            l.email.toLowerCase().includes(query) ||
+            l.phone.toLowerCase().includes(query) ||
+            l.interest.toLowerCase().includes(query) ||
+            l.message.toLowerCase().includes(query)
+          );
+        }
+
+        // Count update
+        document.getElementById('leadsDashboardCountText').innerText = `Mostrando ${filtered.length} leads`;
+
+        if (filtered.length === 0) {
+          leadsArea.innerHTML = `
+            <div class="flex flex-col items-center justify-center py-20 text-center text-gray-400">
+              <p class="text-sm font-semibold">Nenhum lead corresponde aos filtros ativos.</p>
+              <p class="text-xs text-gray-400 mt-1">Tente pesquisar por outros termos ou redefinir a busca.</p>
+            </div>
+          `;
+          return;
+        }
+
+        let html = `
+          <div class="hidden lg:grid grid-cols-12 gap-4 px-4 py-3 bg-brandBlue-soft rounded-t-xl font-bold text-[11px] text-brandBlue uppercase tracking-wider mb-2">
+            <div class="col-span-3">Cliente</div>
+            <div class="col-span-2 text-center">Data</div>
+            <div class="col-span-3">Imóvel de Interesse</div>
+            <div class="col-span-2 text-center">Status</div>
+            <div class="col-span-2 text-right">Ações de Contato</div>
+          </div>
+          <div class="space-y-3">
+        `;
+
+        filtered.forEach(lead => {
+          // Status badge coloring
+          let statusColor = "bg-blue-50 text-blue-600 border border-blue-200";
+          if (lead.status === 'Em Atendimento') statusColor = "bg-orange-50 text-orange-600 border border-orange-200 animate-pulse";
+          if (lead.status === 'Finalizado') statusColor = "bg-emerald-50 text-emerald-600 border border-emerald-200";
+
+          // Format WhatsApp text
+          let rawPhone = lead.phone.replace(/[^0-9]/g, '');
+          if (rawPhone.length === 11 || rawPhone.length === 10) {
+            rawPhone = '55' + rawPhone;
+          }
+          const waTxt = `Olá ${lead.name}, aqui é Milton Barbosa, Corretor Elite. Recebi seu contato sobre "${lead.interest}". Como posso ajudá-lo(a) hoje?`;
+          const waUrl = `https://wa.me/${rawPhone}?text=${encodeURIComponent(waTxt)}`;
+
+          html += `
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 sm:p-5 lg:grid lg:grid-cols-12 lg:gap-4 items-center shadow-sm hover:shadow-md transition-shadow">
+              
+              <!-- Customer Detail -->
+              <div class="col-span-3 pb-3 lg:pb-0 border-b lg:border-b-0 border-gray-100 mb-3 lg:mb-0">
+                <span class="block text-xs font-bold text-brandBlue lg:text-sm">${lead.name}</span>
+                <span class="block text-[11px] text-gray-500 truncate mt-0.5">${lead.email}</span>
+                <span class="block text-[11px] font-semibold text-gray-600 mt-1">${lead.phone}</span>
+              </div>
+
+              <!-- Timestamp -->
+              <div class="col-span-2 text-center pb-3 lg:pb-0 border-b lg:border-b-0 border-gray-100 mb-3 lg:mb-0">
+                <span class="inline-block lg:block text-[10px] text-gray-400 font-semibold bg-gray-50 px-2 lg:px-0 py-1 rounded-full lg:bg-transparent">
+                  ${formatLeadDate(lead.createdAt)}
+                </span>
+              </div>
+
+              <!-- Interest Column & Custom message -->
+              <div class="col-span-3 pb-3 lg:pb-0 border-b lg:border-b-0 border-gray-100 mb-3 lg:mb-0">
+                <span class="block text-xs font-bold text-brandBlue truncate bg-brandBlue-soft px-2.5 py-1.5 rounded-lg leading-relaxed max-w-max text-center lg:text-left">
+                  🏠 ${lead.interest}
+                </span>
+                ${lead.message ? `<p class="text-[11px] text-gray-500 mt-1.5 italic bg-yellow-50/50 border border-yellow-200/50 p-2 rounded-lg leading-relaxed max-w-max line-clamp-3 hover:line-clamp-none transition-all cursor-help" title="${lead.message}">"${lead.message}"</p>` : ''}
+              </div>
+
+              <!-- Status Toggle selection -->
+              <div class="col-span-2 text-center pb-3 lg:pb-0 mb-3 lg:mb-0 flex justify-between lg:justify-center items-center">
+                <span class="lg:hidden text-xs font-bold uppercase text-gray-400">Status:</span>
+                <div class="inline-flex items-center gap-1.5">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase leading-none ${statusColor}">
+                    ${lead.status}
+                  </span>
+                  <!-- Cycle Status button -->
+                  <button onclick="cycleLeadStatus('${lead.id}', '${lead.status}')" class="p-1.5 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-brandOrange transition-colors cursor-pointer" title="Avançar status de atendimento">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Actions Area -->
+              <div class="col-span-2 flex justify-end gap-2 shrink-0">
+                <!-- Tel -->
+                <a href="tel:${lead.phone}" class="p-2 bg-brandBlue-soft hover:bg-brandBlue hover:text-white rounded-xl text-brandBlue transition-colors flex items-center justify-center cursor-pointer" title="Ligar para o cliente">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </a>
+                <!-- WhatsApp -->
+                <a href="${waUrl}" target="_blank" class="p-2 bg-emerald-100 hover:bg-emerald-600 hover:text-white rounded-xl text-emerald-600 transition-colors flex items-center justify-center cursor-pointer" title="Chamar no WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.993L2 22l5.233-1.371a9.918 9.918 0 0 0 4.777 1.22c5.505 0 9.988-4.478 9.989-9.984.001-5.506-4.482-9.985-9.987-9.985zm5.799 14.167c-.244.686-1.42 1.258-1.95 1.314-.482.051-.97.078-2.61-.58a11.97 11.97 0 0 1-5.111-4.49c-.615-.817-1.034-1.764-1.034-2.766 0-2.029 1.543-2.616 1.83-2.73.208-.083.414-.131.62-.131.206 0 .411.004.593.04.195.039.435-.078.679.51.25.603.856 2.083.931 2.232.075.15.124.324.025.523-.099.199-.149.324-.298.497l-.46.536c-.15.174-.306.363-.122.68.183.314.811 1.341 1.737 2.164.793.705 1.459.923 1.782 1.057.244.1.388.083.535-.083.149-.166.643-.75.816-1.002.173-.252.348-.21.583-.122.235.088 1.488.702 1.745.83.257.127.428.19.49.298.062.108.062.622-.182 1.308z"/>
+                  </svg>
+                </a>
+                <!-- Email -->
+                <a href="mailto:${lead.email}" class="p-2 bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-black rounded-xl transition-colors flex items-center justify-center cursor-pointer" title="Escrever e-mail">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </a>
+                <!-- Divider -->
+                <span class="w-px bg-gray-100 self-stretch my-1 mx-0.5"></span>
+                <!-- Delete -->
+                <button onclick="deleteLead('${lead.id}')" class="p-2 hover:bg-red-50 text-gray-300 hover:text-red-500 rounded-xl transition-all cursor-pointer" title="Remover contato permanentemente">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                </button>
+              </div>
+
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+        leadsArea.innerHTML = html;
+      }
+
+      // Step change statuses
+      async function cycleLeadStatus(id, current) {
+        const password = sessionStorage.getItem('broker_password') || '';
+        let next = 'Novo';
+        if (current === 'Novo') next = 'Em Atendimento';
+        else if (current === 'Em Atendimento') next = 'Finalizado';
+        else if (current === 'Finalizado') next = 'Novo';
+
+        try {
+          const response = await fetch(`/api/leads/${id}/status`, {
+            method: 'PATCH',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': password
+            },
+            body: JSON.stringify({ status: next })
+          });
+
+          if (!response.ok) throw new Error();
+          
+          // Local update and re-render
+          const idx = currentLeads.findIndex(l => l.id === id);
+          if (idx !== -1) {
+            currentLeads[idx].status = next;
+            renderFilteredLeads();
+            updateMetricsHUD();
+          }
+
+        } catch (error) {
+          console.error('Error cycling status:', error);
+          alert('Erro ao atualizar status do lead.');
+        }
+      }
+
+      // Delete lead permanent
+      async function deleteLead(id) {
+        if (!confirm('Deseja excluir este contato permanentemente? Esta ação é irreversível.')) return;
+        
+        const password = sessionStorage.getItem('broker_password') || '';
+        try {
+          const response = await fetch(`/api/leads/${id}`, {
+            method: 'DELETE',
+            headers: {
+              'Authorization': password
+            }
+          });
+
+          if (!response.ok) throw new Error();
+
+          // Smooth filter local list
+          currentLeads = currentLeads.filter(l => l.id !== id);
+          renderFilteredLeads();
+          updateMetricsHUD();
+
+        } catch (error) {
+          console.error(error);
+          alert('Não foi possível remover o lead.');
+        }
+      }
+
+      // Intersection Observer for scroll transition animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-in-section').forEach(section => {
+        observer.observe(section);
+      });
+    </script>
+  </body>
+</html>

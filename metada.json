@@ -1,0 +1,8 @@
+{
+  "name": "Imobiliária Elite",
+  "description": "Landing Page institucional moderna e responsiva para a Imobiliária Elite.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
