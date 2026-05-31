@@ -182,5 +182,25 @@ app.post("/api/imoveis", (req, res) => {
 
   res.json(novoImovel);
 });
+let imoveis: any[] = [];
 
+app.get("/api/imoveis", (req, res) => {
+  res.json(imoveis);
+});
+
+app.post("/api/imoveis", (req, res) => {
+  const { nome, preco, descricao, imagem } = req.body;
+
+  const novoImovel = {
+    id: Date.now(),
+    nome,
+    preco,
+    descricao,
+    imagem
+  };
+
+  imoveis.push(novoImovel);
+
+  res.json(novoImovel);
+});
 start();
