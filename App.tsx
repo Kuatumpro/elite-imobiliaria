@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
 
-const [imoveis, setImoveis] = useState<any[]>([]);
-const [titulo, setTitulo] = useState("");
-const [preco, setPreco] = useState("");
-const [descricao, setDescricao] = useState("");
-
 export default function App() {
   const API = "https://elite-imobiliaria.onrender.com";
 
@@ -16,57 +11,15 @@ export default function App() {
     imagem: ""
   });
 
-  function adicionarImovel() {
-  const novo = {
-    id: Date.now(),
-    titulo,
-    preco,
-    descricao
-  };
-
-  const atualizados = [...imoveis, novo];
-  setImoveis(atualizados);
-
-  localStorage.setItem("imoveis", JSON.stringify(atualizados));
-
-  setTitulo("");
-  setPreco("");
-  setDescricao("");
-}
-
   async function loadImoveis() {
-    const res = await fetch(`${API}/api/imoveis`);
-    const data = await res.json();
-    setImoveis(data);
+    try {
+      const res = await fetch(`${API}/api/imoveis`);
+      const data = await res.json();
+      setImoveis(data);
+    } catch (err) {
+      console.log("Erro ao carregar imóveis", err);
+    }
   }
-
-  useEffect(() => {
-    loadImoveis();
-  }, []);
-
-  <div class="bg-white p-4 rounded-xl border mt-6">
-  <h3 class="font-bold mb-3">Adicionar Imóvel</h3>
-
-  <input placeholder="Título" class="border p-2 w-full mb-2" onInput="setTitulo(event.target.value)" />
-  <input placeholder="Preço" class="border p-2 w-full mb-2" onInput="setPreco(event.target.value)" />
-  <textarea placeholder="Descrição" class="border p-2 w-full mb-2" onInput="setDescricao(event.target.value)"></textarea>
-
-  <button onclick="adicionarImovel()" class="bg-blue-600 text-white px-4 py-2 rounded">
-    Adicionar
-  </button>
-
-  <div class="mt-4">
-    <div id="lista-imoveis">
-      {imoveis.map((i) => (
-        <div key={i.id} class="border p-2 mt-2 rounded">
-          <strong>{i.titulo}</strong>
-          <p>{i.preco}</p>
-          <p>{i.descricao}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
 
   async function addImovel() {
     await fetch(`${API}/api/imoveis`, {
@@ -79,6 +32,10 @@ export default function App() {
 
     loadImoveis();
   }
+
+  useEffect(() => {
+    loadImoveis();
+  }, []);
 
   return (
     <div style={{ padding: 20 }}>
@@ -100,7 +57,7 @@ export default function App() {
         <br />
 
         <input
-          placeholder="Imagem (URL)"
+          placeholder="Imagem"
           value={form.imagem}
           onChange={(e) => setForm({ ...form, imagem: e.target.value })}
         />
@@ -130,9 +87,7 @@ export default function App() {
           <h3>{i.nome}</h3>
           <p>{i.preco}</p>
           <p>{i.descricao}</p>
-          {i.imagem && (
-            <img src={i.imagem} style={{ width: 200 }} />
-          )}
+          {i.imagem && <img src={i.imagem} width={200} />}
         </div>
       ))}
     </div>
