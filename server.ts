@@ -161,5 +161,26 @@ async function start() {
     console.log(`Server running at http://0.0.0.0:${PORT}`);
   });
 }
+let imoveis: any[] = [];
+
+app.get("/api/imoveis", (req, res) => {
+  res.json(imoveis);
+});
+
+app.post("/api/imoveis", (req, res) => {
+  const { nome, preco, descricao, imagem } = req.body;
+
+  const novoImovel = {
+    id: Date.now(),
+    nome,
+    preco,
+    descricao,
+    imagem
+  };
+
+  imoveis.push(novoImovel);
+
+  res.json(novoImovel);
+});
 
 start();
