@@ -1,6 +1,13 @@
-import Dashboard from "./pages/Dashboard";
-const API = "http://localhost:3000";
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imobiliária Elite | Onde seus sonhos encontram endereço</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
 
-export default function App() {
-  return <Dashboard />;
-}

@@ -1,8 +1,6 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-export default function App() {
-  return <div></div>;
+{
+  "name": "Imobiliária Elite",
+  "description": "Portfólio de imóveis de alto padrão com gerenciamento dinâmico de novos imóveis e leads para corretores integrado no painel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
